@@ -1,0 +1,83 @@
+<div class="flex min-h-[70vh] items-center justify-center">
+  <div class="w-full max-w-md rounded-lg border border-slate-200 bg-white p-6 shadow-lg">
+    <!-- Título -->
+    <div class="mb-6 text-center">
+      <h1 class="text-3xl font-bold tracking-tight text-slate-900">Criar conta</h1>
+      <p class="mt-1 text-sm text-slate-500">
+        Preencha os dados para acessar o Sistema<span class="font-semibold text-indigo-600">RH</span>
+      </p>
+    </div>
+
+    <!-- Formulário (sem lógica por enquanto: o preventDefault evita o recarregamento da página) -->
+    <form class="space-y-4" (submit)="$event.preventDefault()">
+      <div>
+        <label for="nome" class="mb-1 block text-sm font-medium text-slate-700">Nome</label>
+        <input
+          id="nome"
+          name="nome"
+          type="text"
+          autocomplete="name"
+          placeholder="Seu nome completo"
+          required
+          class="w-full rounded-md border border-slate-300 px-3 py-2 text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none"
+        />
+      </div>
+
+      <div>
+        <label for="email" class="mb-1 block text-sm font-medium text-slate-700">E-mail</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          placeholder="seu.email@empresa.com"
+          required
+          class="w-full rounded-md border border-slate-300 px-3 py-2 text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none"
+        />
+      </div>
+
+      <div>
+        <label for="senha" class="mb-1 block text-sm font-medium text-slate-700">Senha</label>
+        <input
+          id="senha"
+          name="senha"
+          type="password"
+          autocomplete="new-password"
+          placeholder="••••••••"
+          required
+          class="w-full rounded-md border border-slate-300 px-3 py-2 text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none"
+        />
+      </div>
+
+      <div>
+        <label for="confirmarSenha" class="mb-1 block text-sm font-medium text-slate-700">
+          Confirmar senha
+        </label>
+        <input
+          id="confirmarSenha"
+          name="confirmarSenha"
+          type="password"
+          autocomplete="new-password"
+          placeholder="Repita a senha"
+          required
+          class="w-full rounded-md border border-slate-300 px-3 py-2 text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="w-full rounded-md bg-indigo-600 px-4 py-2 font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-300 focus:outline-none"
+      >
+        Cadastrar
+      </button>
+    </form>
+
+    <!-- Link para login -->
+    <p class="mt-6 text-center text-sm text-slate-600">
+      Já possui uma conta?
+      <a routerLink="/login" class="font-medium text-indigo-600 hover:text-indigo-800 hover:underline">
+        Entre
+      </a>
+    </p>
+  </div>
+</div>

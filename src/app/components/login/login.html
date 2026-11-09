@@ -1,0 +1,31 @@
+<div class="flex flex-col items-center justify-center h-screen ">
+    <h3 class="text-2xl font-bold mb-4 text-blue-700">Login - Entre na sua conta</h3>
+
+    <div class="bg-white p-8 rounded shadow-md max-w-md w-full flex flex-col">
+
+        <form class="space-y-4" [formGroup]="form" (ngSubmit)="entrar()">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu email" formControlName="email"
+                class="mb-4 focus:border-blue-500 w-full rounded p-2 border border-blue-300">
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" formControlName="senha"
+                class="mb-4 focus:border-blue-500 w-full rounded p-2 border border-blue-300">
+
+            @if(erro()){
+            <p class="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">{{erro()}}</p>
+            }
+
+            <button type="submit" [disabled]="carregando()"
+                class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60">
+                {{carregando() ? 'Entrando...' : 'Entrar'}}
+            </button>
+
+            <a routerLink="/cadastro" class="text-black-600 hover:text-blue-800 mt-4 text-center">Não tem uma conta?
+                Cadastre-se</a>
+
+        </form>
+
+    </div>
+</div>

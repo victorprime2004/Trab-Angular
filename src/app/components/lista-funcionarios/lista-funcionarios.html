@@ -1,0 +1,63 @@
+<main class="mx-auto max-w-6xl p-6">
+    <h1 class="mb-6 text-2xl font-bold text-slate-900">Colaboradores</h1>
+    @if (carregando()) {
+    <p role="status" class="text-slate-600">Carregando colaboradores...</p>
+    } @else if (erro()) {
+    <p role="alert" class="text-red-700">{{ erro() }}</p>
+    } @else {
+    <div class="overflow-x-auto rounded-lg border border-slate-200">
+        <table class="w-full text-left text-sm">
+            <thead class="bg-slate-100 text-slate-700">
+                <tr>
+                    <th scope="col" class="p-3">ID</th>
+                    <th scope="col" class="p-3">Nome</th>
+                    <th scope="col" class="p-3">E-mail</th>
+                    <th scope="col" class="p-3">Nascimento</th>
+                    <th scope="col" class="p-3">Contatos</th>
+                    <th scope="col" class="p-3">Endereços</th>
+                    <th scope="col" class="p-3">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (colaborador of colaboradores(); track colaborador.id) {
+                <tr class="border-t border-slate-200">
+                    <td class="p-3">{{ colaborador.id }}</td>
+                    <td class="p-3 font-medium">{{ colaborador.nome }}</td>
+                    <td class="p-3">{{ colaborador.email }}</td>
+                    <td class="p-3">{{ colaborador.dataNascimento ?? '—' }}</td>
+                    <td class="p-3">{{ colaborador.contatos.length }}</td>
+                    <td class="p-3">{{ colaborador.enderecos.length }}</td>
+                    <td class="p-3">
+                        <div class="flex gap-2">
+
+                            <button type="button" disabled title="Editar" aria-label="Editar"
+                                class="cursor-not-allowed rounded border border-slate-300 p-2">
+                                <span aria-hidden="true">&#x270F;</span>
+                            </button>
+                            <button type="button" title="Excluir" aria-label="Excluir" (click)="excluir(colaborador.id)"
+                                class="cursor-not-allowed rounded border border-slate-300 p-2">
+                                <span aria-hidden="true">&#x1F5D1;</span>
+                            </button>
+                            <button type="button" disabled title="Contatos" aria-label="Contatos"
+                                class="cursor-not-allowed rounded border border-slate-300 p-2">
+                                <span aria-hidden="true">&#x260E;</span>
+                            </button>
+                            <button type="button" disabled title="Endereços" aria-label="Endereços"
+                                class="cursor-not-allowed rounded border border-slate-300 p-2">
+                                <span aria-hidden="true">&#x1F4CD;</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                } @empty {
+                <tr>
+                    <td colspan="7" class="p-3 text-center text-slate-600">
+                        Nenhum colaborador encontrado.
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    }
+</main>
