@@ -30,19 +30,22 @@
                     <td class="p-3">
                         <div class="flex gap-2">
 
-                            <button type="button" disabled title="Editar" aria-label="Editar"
+                            <button type="button"  title="Editar" aria-label="Editar" routerLink="/formulario-funcionarios"
                                 class="cursor-not-allowed rounded border border-slate-300 p-2">
                                 <span aria-hidden="true">&#x270F;</span>
                             </button>
+
                             <button type="button" title="Excluir" aria-label="Excluir" (click)="excluir(colaborador.id)"
                                 class="cursor-not-allowed rounded border border-slate-300 p-2">
                                 <span aria-hidden="true">&#x1F5D1;</span>
                             </button>
-                            <button type="button" disabled title="Contatos" aria-label="Contatos"
+
+                            <button type="button"  title="Contatos" aria-label="Contatos" routerLink="/contatos"
                                 class="cursor-not-allowed rounded border border-slate-300 p-2">
                                 <span aria-hidden="true">&#x260E;</span>
                             </button>
-                            <button type="button" disabled title="Endereços" aria-label="Endereços"
+
+                            <button type="button"  title="Endereços" aria-label="Endereços" routerLink="/enderecos"
                                 class="cursor-not-allowed rounded border border-slate-300 p-2">
                                 <span aria-hidden="true">&#x1F4CD;</span>
                             </button>

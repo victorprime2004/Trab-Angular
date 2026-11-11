@@ -34,6 +34,7 @@ export const routes: Routes = [
       { path: 'contatos', component: Contatos },
     ],
   },
+  
   { path: '**', redirectTo: 'login' },
 
 
